@@ -82,21 +82,28 @@
             ];
             center = [
               {
+                id = "plugin:catwalk";
+              }
+              {
                 id = "Clock";
                 formatHorizontal = "HH:mm\\ndddd, MMMM dd";
                 formatVertical = "HH:mm";
                 tooltipFormat = "";
+              }
+              {
+                id = "NotificationHistory";
+                showUnreadBadge = false;
+                hideWhenZeroUnread = false;
+              }
+              {
+                id = "plugin:kde-connect";
               }
             ];
             right = [
               {
                 id = "Tray";
               }
-              {
-                id = "NotificationHistory";
-                showUnreadBadge = false;
-                hideWhenZeroUnread = true;
-              }
+
               {
                 id = "MediaMini";
               }
@@ -106,12 +113,6 @@
                 leftClickExec = "bash -c '/home/mar/.config/niri/scripts/osk.sh'";
                 generalTooltipText = "Toggle the on-screen keyboard (restarts the keyboard if needed.)";
                 showIcon = true;
-              }
-              {
-                id = "plugin:kde-connect";
-              }
-              {
-                id = "plugin:catwalk";
               }
               {
                 id = "Spacer";
@@ -223,8 +224,8 @@
           autoSchedule = true;
           nightTemp = "4000";
           dayTemp = "6500";
-          manualSunrise = "06:30";
-          manualSunset = "18:30";
+          manualSunrise = "08:00";
+          manualSunset = "19:00";
         };
         colorSchemes.useWallpaperColors = false;
         colorSchemes.predefinedScheme = "Noctalia (default)";
@@ -292,17 +293,17 @@
       touch ${config.xdg.configHome}/gtk-3.0/gtk.css
     '';
     xdg.configFile."noctalia/colors.json".text = builtins.toJSON {
-      "mSurface" = "#fdf3f4";
+      "mSurface" = "#f1c4c7";
       "mOnSurface" = "#4a4442";
-      "mPrimary" = "#7ab0a1";
-      "mOnPrimary" = "#ffffff";
+      "mPrimary" = "#1e8b44";
+      "mOnPrimary" = "#e9c5c5";
       "mSecondary" = "#bfa399";
       "mOutline" = "#8c7b75";
 
-      "mSurfaceVariant" = "#ffedef";
+      "mSurfaceVariant" = "#85aaa0";
       "mOnSurfaceVariant" = "#4a4442";
       "mTertiary" = "#e8a0a5";
-      "mOnTertiary" = "#ffffff";
+      "mOnTertiary" = "#d0aeae";
       "mError" = "#cf6679";
       "mOnError" = "#ffffff";
       "mShadow" = "#000000";

@@ -36,6 +36,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    git
+    jj
     podman-compose
     podman-tui
     polkit_gnome
