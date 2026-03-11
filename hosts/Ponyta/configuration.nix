@@ -83,7 +83,8 @@
     grc
     galaxy-buds-client
     # Big screen: May run JetBrains.
-    jetbrains.rust-rover
+    # jetbrains.rust-rover
+    jetbrains-toolbox
   ];
 
   programs.steam = {
