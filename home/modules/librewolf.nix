@@ -81,7 +81,8 @@
       };
       extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
         bitwarden
-        # rose-pine-dawn2 # Doesn't exist :C
+        # Or it's new contender:
+        # heylogin # Not in firefox-addons (yet?)
         pronoundb
         ublock-origin
       ];

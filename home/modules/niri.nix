@@ -283,11 +283,16 @@
           action.spawn = "kgx";
           hotkey-overlay.title = "Open a Terminal: Gnome Console";
         };
-        "Mod+B" = {
+        "Mod+e" = {
+          action.spawn = "nautilus";
+
+          hotkey-overlay.title = "Open that gnome file browser";
+        };
+        "Mod+Shift+B" = {
           action.spawn = "librewolf";
           hotkey-overlay.title = "Open default browser: Librewolf";
         };
-        "Mod+Shift+B" = {
+        "Mod+B" = {
           action.spawn = "vivaldi";
           hotkey-overlay.title = "Open browser: Vivaldi";
         };

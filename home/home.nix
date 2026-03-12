@@ -35,17 +35,19 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "librewolf.desktop";
-      "x-scheme-handler/http" = "librewolf.desktop";
-      "x-scheme-handler/https" = "librewolf.desktop";
-      "x-scheme-handler/about" = "librewolf.desktop";
-      "x-scheme-handler/unknown" = "librewolf.desktop";
-      "application/xhtml+xml" = "librewolf.desktop";
-      "application/x-extension-htm" = "librewolf.desktop";
-      "application/x-extension-html" = "librewolf.desktop";
-      "application/x-extension-shtml" = "librewolf.desktop";
-      "application/x-extension-xhtml" = "librewolf.desktop";
-      "application/x-extension-xht" = "librewolf.desktop";
+      # 'librewolf.desktop' or 'vivaldi-stable.desktop'
+      "text/html" = "vivaldi-stable.desktop";
+      "x-scheme-handler/http" = "vivaldi-stable.desktop";
+      "x-scheme-handler/https" = "vivaldi-stable.desktop";
+      "x-scheme-handler/about" = "vivaldi-stable.desktop";
+      "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
+      "application/xhtml+xml" = "vivaldi-stable.desktop";
+      "application/pdf" = "vivaldi-stable.desktop";
+      "application/x-extension-htm" = "vivaldi-stable.desktop";
+      "application/x-extension-html" = "vivaldi-stable.desktop";
+      "application/x-extension-shtml" = "vivaldi-stable.desktop";
+      "application/x-extension-xhtml" = "vivaldi-stable.desktop";
+      "application/x-extension-xht" = "vivaldi-stable.desktop";
     };
   };
 
