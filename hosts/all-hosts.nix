@@ -2,9 +2,11 @@
   lib,
   pkgs,
   config,
+  home-manager,
   ...
 }:
 {
+  home-manager.backupFileExtension = "backup";
 
   nixpkgs.overlays = [
     (final: prev: {
@@ -63,8 +65,8 @@
 
   services.tailscale.enable = true;
 
-  # Enable fish
-  programs.fish.enable = true;
+  # Enable zsh
+  programs.zsh.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -85,10 +87,10 @@
   nix.settings.auto-optimise-store = true;
 
   # User account
-  users.users.mar = {
+  users.users.liv = {
     isNormalUser = true;
-    description = "MLC Bloeiman";
-    shell = pkgs.fish;
+    description = "ollie";
+    shell = pkgs.zsh;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -103,7 +105,7 @@
   security.sudo.enable = false;
   security.doas.extraRules = [
     {
-      users = [ "mar" ];
+      users = [ "liv" ];
       keepEnv = true;
       noPass = true;
     }

@@ -7,7 +7,7 @@
     noto-fonts
     noto-fonts-color-emoji
     font-awesome
-    # maple-mono.NF
+    maple-mono.NF
     hermit
     nerd-fonts.lilex
     nerd-fonts.symbols-only

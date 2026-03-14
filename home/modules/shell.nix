@@ -4,7 +4,7 @@
   imports = [
     ./shell/kc.nix
   ];
-  programs.fish = {
+  programs.zsh = {
     enable = true;
   };
   programs.direnv = {
@@ -27,34 +27,22 @@
 
   };
 
-  xdg.configFile."fish" = {
-    source = ../../configs/fish;
-    recursive = true;
+  xdg.configFile.".zshrc" = {
+    source = ../../configs/.zshrc;
   };
-  xdg.configFile."zellij" = {
-    source = ../../configs/zellij;
-    recursive = true;
-  };
-
-  xdg.configFile."starship.toml" = {
-    source = ../../configs/starship.toml;
+  xdg.configFile.".p10k.zsh" = {
+    source = ../../configs/.p10k.zsh;
   };
   home.packages = with pkgs; [
     eza
     bat
     zoxide
-    starship
+    zinit
     hyfetch
     macchina
-    zellij
-    fish
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.hydro
     fzf
-    fishPlugins.grc
     xsel
     jq
+    btop
   ];
 }

@@ -4,16 +4,16 @@
   programs.git = {
     enable = true;
     settings = {
-      user.name = "MLC Bloeiman";
-      user.email = "mar@strawmelonjuice.com";
+      user.name = "ollie";
+      user.email = "git@nuv.direct";
     };
   };
   programs.jujutsu = {
     enable = true;
     package = pkgs.jujutsu;
     settings = {
-      user.name = "MLC Bloeiman";
-      user.email = "mar@strawmelonjuice.com";
+      user.name = "ollie";
+      user.email = "git@nuv.direct";
       ui.diff-formatter = [
         "difft"
         "--color=always"

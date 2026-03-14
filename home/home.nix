@@ -3,7 +3,6 @@
   hostname,
   ...
 }:
-
 {
   imports = [
     ./modules/development.nix
@@ -19,8 +18,8 @@
     ./host-specific/${hostname}.nix
   ];
 
-  home.username = "mar";
-  home.homeDirectory = "/home/mar";
+  home.username = "liv";
+  home.homeDirectory = "/home/liv";
   home.stateVersion = "25.11"; # Ensure this matches your NixOS version
 
   home.packages = with pkgs; [
@@ -55,26 +54,26 @@
     TERMINAL = "wezterm";
     PASSWORD_STORE_TYPE = "basic";
     ZED_ALLOW_EMULATED_GPU = 1;
-    SHELL = "fish";
+    SHELL = "zsh";
   };
 
   systemd.user.services.wallpaper-switcher = {
     Unit.Description = "Swap wallpaper based on time";
     Service = {
       ExecStart = pkgs.writeShellScript "swap-wall" ''
-        if [ ! -d "/home/mar/.local/share/wallpapers/aesthetic-wallpapers" ]; then
-          git clone https://github.com/D3Ext/aesthetic-wallpapers.git /home/mar/.local/share/wallpapers/aesthetic-wallpapers
+        if [ ! -d "/home/liv/.local/share/wallpapers/aesthetic-wallpapers" ]; then
+          git clone https://github.com/D3Ext/aesthetic-wallpapers.git /home/liv/.local/share/wallpapers/aesthetic-wallpapers
         fi
         HOUR=$(date +%H)
         if [ $HOUR -ge 19 ] || [ $HOUR -lt 8 ]; then
           # Night time: 19:00 to 07:59
-          ln -sf /home/mar/.local/share/wallpapers/aesthetic-wallpapers/images/pastel-window.png /home/mar/.local/share/wallpapers/current_wallpaper.png
-          noctalia-shell ipc call wallpaper set /home/mar/.local/share/wallpapers/aesthetic-wallpapers/images/pastel-window.png ""
+          ln -sf /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pastel-window.png /home/liv/.local/share/wallpapers/current_wallpaper.png
+          noctalia-shell ipc call wallpaper set /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pastel-window.png ""
           noctalia-shell ipc call darkMode setDark
         else
             # Day time
-          ln -sf /home/mar/.local/share/wallpapers/aesthetic-wallpapers/images/pixel_big_city.png /home/mar/.local/share/wallpapers/current_wallpaper.png
-          noctalia-shell ipc call wallpaper set /home/mar/.local/share/wallpapers/aesthetic-wallpapers/images/pixel_big_city.png ""
+          ln -sf /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pixel_big_city.png /home/liv/.local/share/wallpapers/current_wallpaper.png
+          noctalia-shell ipc call wallpaper set /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pixel_big_city.png ""
           noctalia-shell ipc call darkMode setLight
         fi
       '';
@@ -90,5 +89,6 @@
     };
     Install.WantedBy = [ "timers.target" ];
   };
+ 
 
 }

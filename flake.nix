@@ -1,5 +1,5 @@
 {
-  description = "Mar's dotfiles for nix :3";
+  description = "totally not mar's dotfiles for nix :3";
 
   inputs = {
     nixpkgs-stable = {
@@ -30,6 +30,8 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
   outputs =
     {
@@ -54,7 +56,7 @@
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = { inherit inputs hostname; };
-              home-manager.users.mar = {
+              home-manager.users.liv = {
                 imports = [
                   ./home/home.nix
                 ];
@@ -65,9 +67,7 @@
     in
     {
       nixosConfigurations = {
-        Fennekin = mkSystem "Fennekin" "x86_64-linux";
-        samurott-nix = mkSystem "samurott-nix" "x86_64-linux";
-        Ponyta = mkSystem "Ponyta" "x86_64-linux";
+        shitbox = mkSystem "shitbox" "x86_64-linux";
       };
     };
 }
