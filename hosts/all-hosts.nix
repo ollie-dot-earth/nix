@@ -78,7 +78,7 @@
   programs.ssh.askPassword = lib.mkForce "${pkgs.gnome-themes-extra}/libexec/seahorse/ssh-askpass";
   programs.niri.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.mar.enableGnomeKeyring = true;
+  security.pam.services.liv.enableGnomeKeyring = true;
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -110,5 +110,4 @@
       noPass = true;
     }
   ];
-
 }
