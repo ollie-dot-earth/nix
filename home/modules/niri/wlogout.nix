@@ -2,50 +2,46 @@
   programs.wlogout = {
     enable = true;
     layout = [
-          {
-              label = "lock";
-              action = "hyprlock";
-              text = "Lock";
-              keybind = "l";
-          }
-          {
-              label = "logout";
-              action = "niri msg action quit --skip-confirmation";
-              text = "Logout";
-              keybind = "e";
-          }
+      {
+        label = "lock";
+        action = "hyprlock";
+        text = "Lock";
+        keybind = "l";
+      }
+      {
+        label = "logout";
+        action = "niri msg action quit --skip-confirmation";
+        text = "Logout";
+        keybind = "e";
+      }
 
-          {
-              label = "shutdown";
-              action = "poweroff";
-              text = "Shutdown";
-              keybind = "s"
-              ;
-          }
+      {
+        label = "shutdown";
+        action = "poweroff";
+        text = "Shutdown";
+        keybind = "s";
+      }
 
-          {
-              label = "reboot";
-              action = "reboot";
-              text = "Reboot";
-              keybind = "r"
-              ;
-          }
+      {
+        label = "reboot";
+        action = "reboot";
+        text = "Reboot";
+        keybind = "r";
+      }
 
-          {
-              label = "hibernate";
-              action = "niri msg action open-overview; niri msg action spawn -- hyprlock && systemctl hibernate";
-              text = "Hibernate";
-              keybind = "h"
-              ;
-          }
+      {
+        label = "hibernate";
+        action = "niri msg action open-overview; niri msg action spawn -- hyprlock && systemctl hibernate";
+        text = "Hibernate";
+        keybind = "h";
+      }
 
-          {
-              label = "suspend";
-              action = "niri msg action spawn -- hyprlock && systemctl suspend-then-hibernate";
-              text = "Sleep";
-              keybind = "z"
-              ;
-          }
+      {
+        label = "suspend";
+        action = "niri msg action spawn -- hyprlock && systemctl suspend-then-hibernate";
+        text = "Sleep";
+        keybind = "z";
+      }
     ];
     style = ''
 
@@ -110,11 +106,11 @@
       	border: 3px solid #FFFFFF;
         background-color: #ffffff;
       }
-          '';
+    '';
   };
 
   xdg.configFile."wlogout/icons" = {
-      source = ../../../configs/wlogout-icons;
-      recursive = true;
-    };
+    source = ../../../configs/wlogout-icons;
+    recursive = true;
+  };
 }

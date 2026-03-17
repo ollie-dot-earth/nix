@@ -1,9 +1,18 @@
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
 
   # Enable flakes and new CLI
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-  imports = [ 
+  imports = [
     ./hardware-configuration.nix
     ../all-hosts.nix
   ];
@@ -14,7 +23,6 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
 
   networking.hostName = "shitbox";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
