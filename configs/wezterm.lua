@@ -35,5 +35,15 @@ config.window_padding = {
 
 config.window_close_confirmation = 'NeverPrompt'
 
+
+-- auto maximize on startup
+local mux = wezterm.mux
+wezterm.on("gui-startup", function(cmd)
+    if mux then
+        local tab, pane, window = mux.spawn_window(cmd or {})
+        window:gui_window():maximize()
+    end
+end)
+
 -- and finally, return the configuration to wezterm
 return config
