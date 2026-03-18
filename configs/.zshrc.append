@@ -29,7 +29,7 @@ function create-envrc() {
         return 1
     fi
 
-    if [ -e flake.nix ] 
+    if ! [ -e flake.nix ] 
     then
         echo "❌ No flake.nix file in this directory"
         return 1
