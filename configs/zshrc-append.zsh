@@ -103,7 +103,7 @@ _zap() {
     kc
 
     if [[ -d .jj ]]; then
-        jj log -Tbuiltin_log_compact_full_description -r'ancestors(bookmarks() & @-, 5) & ~@' --reversed --no-pager --limit 5
+        jj log -Tbuiltin_log_compact_full_description -r'ancestors(bookmarks() & @-, 4) & ~@' --reversed --no-pager 
         jj show --summary
     else
         git status
