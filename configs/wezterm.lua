@@ -2,11 +2,10 @@ local get_time_of_day = function()
     local hour = tonumber(os.date("%H"))
     if hour >= 6 and hour < 12 then
         -- morning
-        -- return "Rosé Pine Dawn (Gogh)" -- need to find a good light one
-        return "Catppuccin Mocha"
+        return "Breadog (Gogh)"
     elseif hour >= 12 and hour < 18 then
         -- afternoon
-        return "Catppuccin Mocha" -- need to find a good light one
+        return "Breadog (Gogh)"
     elseif hour >= 18 and hour < 24 then
         -- evening
         return "Catppuccin Mocha"
@@ -25,13 +24,6 @@ config.color_scheme = get_time_of_day()
 
 config.font = wezterm.font 'Maple Mono NF'
 config.font_size = 16
-
-config.window_padding = {
-    left = 5,
-    right = 5,
-    top = 5,
-    bottom = 5,
-}
 
 config.window_close_confirmation = 'NeverPrompt'
 
