@@ -2,6 +2,8 @@
 # Proper functions and such go in here (.zshrc.append) for lsp support ----------
 # -------------------------------------------------------------------------------
 
+# source backed up .zshenv which contains some secrets
+source ~/.zshenv.backup
 
 # Completion styling ------------------------------------------------------------
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
