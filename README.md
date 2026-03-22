@@ -50,12 +50,11 @@ doas git config --global --add safe.directory /home/liv/.dotfiles # Safelist dot
 | Name     | Kind               | About                                                     | Special                                                                       |
 | -------- | ------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | shitbox | e-waste laptop | pretty much just a media laptop | |
+| beeg-puter | my main desktop | Ryzen 9 7900X + 32gig + 3090 | |
 
 ## TODO
 nix:
 - replace p10k with starship
-- nvidia drivers
-- add beeg puter
 - commit signing (has to work with jj split)
 - sops for logins n such (maybe ssh keys as well; we'll see)
 

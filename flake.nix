@@ -68,6 +68,7 @@
     {
       nixosConfigurations = {
         shitbox = mkSystem "shitbox" "x86_64-linux";
+        beeg-puter = mkSystem "beeg-puter" "x86_64-linux";
       };
     };
 }
