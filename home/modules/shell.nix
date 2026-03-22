@@ -117,7 +117,8 @@
 
   };
 
-  xdg.configFile.".p10k.zsh".source = ../../configs/.p10k.zsh;
+  home.file.".p10k.zsh".source = ../../configs/.p10k.zsh;
+  home.file.".ssh/config".source = ../../configs/ssh-config;
 
   home.packages = with pkgs; [
     zsh-powerlevel10k

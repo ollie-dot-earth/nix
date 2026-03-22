@@ -1,0 +1,11 @@
+Host git.nuv.sh
+    User git
+    Port 222
+
+Host knot.nuv.sh
+    User git
+    Port 2222
+
+Host github.com
+    User git
+    Port 22
