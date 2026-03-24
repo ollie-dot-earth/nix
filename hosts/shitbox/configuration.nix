@@ -87,26 +87,26 @@
   hardware = {
     # enable opengl
     graphics.enable = true;
-    nvidia = {
-      # cant use open source drivers
-      open = false;
-
-      # enable nvidia-settings
-      nvidiaSettings = true;
-
-      # needed for wayland
-      modesetting.enable = true;
-
-      # hybrid graphics
-      prime = {
-        # offload.enable = true;
-        intelBusId = "PCI:0@0:2:0";
-        nvidiaBusId = "PCI:1@0:0:0";
-      };
-    };
+    # nvidia = {
+    #   # cant use open source drivers
+    #   open = false;
+    #
+    #   # enable nvidia-settings
+    #   nvidiaSettings = true;
+    #
+    #   # needed for wayland
+    #   modesetting.enable = true;
+    #
+    #   # hybrid graphics
+    #   prime = {
+    #     # offload.enable = true;
+    #     intelBusId = "PCI:0@0:2:0";
+    #     nvidiaBusId = "PCI:1@0:0:0";
+    #   };
+    # };
   };
   # use them
-  services.xserver.videoDrivers = [ "nvidia" ];
+  # services.xserver.videoDrivers = [ "nvidia" ];
 
   system.stateVersion = "25.11";
 }
