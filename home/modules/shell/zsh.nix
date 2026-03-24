@@ -51,6 +51,7 @@
         { name = "zsh-users/zsh-autosuggestions"; }
         { name = "Aloxaf/fzf-tab"; }
         { name = "anatolykopyl/doas-zsh-plugin"; }
+        { name = "giacomocavalieri/zsh_gleam_completions"; }
       ];
     };
     initContent =
