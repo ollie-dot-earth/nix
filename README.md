@@ -7,11 +7,11 @@ Cloning the `nix` branch using `jj` from the Strawmelonjuice forge:
 nix shell nixpkgs#git nixpkgs#jujutsu nixpkgs#neovim --extra-experimental-features nix-command --extra-experimental-features flakes
 
 # Clone the dotfiles
-jj git clone https://git.nuv.sh/nuv/nix.git -b main ~/.dotfiles
+jj git clone https://git.ollie.earth/ollie/nix.git -b main ~/.dotfiles
 
 cd ~/.dotfiles
 # Set origin correctly for dotfiles, assuming you by the time you push again have the keys.
-jj git remote set-url origin ssh://git@git.nuv.sh/nuv/nix.git
+jj git remote set-url origin ssh://git@git.ollie.earth/ollie/nix.git
 
 # Clone wallpapers.
 jj git clone https://github.com/D3Ext/aesthetic-wallpapers.git ~/.local/share/wallpapers/aesthetic-wallpapers

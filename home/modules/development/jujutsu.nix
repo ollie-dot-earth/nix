@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       user.name = "ollie";
-      user.email = "git@nuv.direct";
+      user.email = "git@ollie.earth";
     };
   };
   programs.jujutsu = {
@@ -13,7 +13,7 @@
     package = pkgs.jujutsu;
     settings = {
       user.name = "ollie";
-      user.email = "git@nuv.direct";
+      user.email = "git@ollie.earth";
       ui.diff-formatter = [
         "difft"
         "--color=always"
