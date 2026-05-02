@@ -57,6 +57,10 @@
     initContent =
       let
         zshConfigEarlyInit = lib.mkOrder 500 ''
+          # Have to have ssh-agent running for yubikey sk-ed25519
+          eval $(ssh-agent)
+          clear
+
           hyfetch
           if [[ -r "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
               source "''${XDG_CACHE_HOME:-''$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"

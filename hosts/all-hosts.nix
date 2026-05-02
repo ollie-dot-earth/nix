@@ -87,7 +87,7 @@
   ];
 
   # services.desktopManager.plasma6.enable = true;
-  programs.ssh.askPassword = lib.mkForce "${pkgs.gnome-themes-extra}/libexec/seahorse/ssh-askpass";
+  # programs.ssh.askPassword = lib.mkForce "${pkgs.gnome-themes-extra}/libexec/seahorse/ssh-askpass";
   programs.niri.enable = true;
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.liv.enableGnomeKeyring = true;
