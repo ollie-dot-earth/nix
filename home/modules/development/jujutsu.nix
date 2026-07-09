@@ -110,7 +110,37 @@
           ''
         ];
 
+        # The following are from this wonderful blogpost
+        # https://isaaccorbrey.com/notes/jujutsu-megamerges-for-fun-and-profit
+        # `jj stack <revset>` to include specific revs
+        stack = [
+          "rebase"
+          "--after"
+          "trunk()"
+          "--before"
+          "closest_merge(@)"
+          "--revisions"
+        ];
+        # `jj stage` to include the whole stack after the megamerge
+        stage = [
+          "stack"
+          "closest_merge(@)+:: ~ empty()"
+        ];
+        # `jj restack` to rebase your changes onto `trunk()`
+        restack = [
+          "rebase"
+          "--onto"
+          "trunk()"
+          "--source"
+          "roots(trunk()..) & mutable()"
+          # readd when i bother to update jj
+          # "--simplify-parents"
+        ];
       };
+      revset-aliases = {
+        "closest_merge(to)" = "heads(::to & merges())";
+      };
+
     };
 
   };
