@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -11,7 +9,6 @@
   #   wakatime-cli
   # ];
   programs.neovim = {
-    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     enable = true;
     defaultEditor = true;
     viAlias = true;

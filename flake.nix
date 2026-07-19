@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs-stable = {
-      url = "github:nixos/nixpkgs/nixos-25.11";
+      url = "github:nixos/nixpkgs/nixos-26.05";
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
@@ -17,17 +17,6 @@
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
-    };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-    };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
@@ -47,7 +36,11 @@
           inherit system;
           specialArgs = { inherit inputs hostname stateVersion; };
           modules = [
-            inputs.noctalia.nixosModules.default
+            {
+              nixpkgs.overlays = [
+                inputs.neovim-nightly-overlay.overlays.default
+              ];
+            }
             ./hosts/${hostname}/configuration.nix
             home-manager.nixosModules.home-manager
             {
@@ -66,8 +59,8 @@
     in
     {
       nixosConfigurations = {
-        shitbox = mkSystem "shitbox" "x86_64-linux" "25.11";
-        beeg-puter = mkSystem "beeg-puter" "x86_64-linux" "25.11";
+        shitbox = mkSystem "shitbox" "x86_64-linux" "26.05";
+        beeg-puter = mkSystem "beeg-puter" "x86_64-linux" "26.05";
       };
     };
 }

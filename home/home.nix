@@ -10,8 +10,6 @@
     ./modules/fonts.nix
     ./modules/games.nix
     ./modules/gnome.nix
-    ./modules/librewolf.nix
-    ./modules/niri.nix
     ./modules/shell.nix
     ./modules/wezterm.nix
   ]
@@ -69,13 +67,9 @@
         if [ $HOUR -ge 19 ] || [ $HOUR -lt 8 ]; then
           # Night time: 19:00 to 07:59
           ln -sf /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pastel-window.png /home/liv/.local/share/wallpapers/current_wallpaper.png
-          noctalia-shell ipc call wallpaper set /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pastel-window.png ""
-          noctalia-shell ipc call darkMode setDark
         else
             # Day time
           ln -sf /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pixel_big_city.png /home/liv/.local/share/wallpapers/current_wallpaper.png
-          noctalia-shell ipc call wallpaper set /home/liv/.local/share/wallpapers/aesthetic-wallpapers/images/pixel_big_city.png ""
-          noctalia-shell ipc call darkMode setLight
         fi
       '';
     };
