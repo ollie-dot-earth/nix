@@ -42,10 +42,10 @@
     let
       # Helper function to create system configs easily
       mkSystem =
-        hostname: system:
+        hostname: system: stateVersion:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs hostname; };
+          specialArgs = { inherit inputs hostname stateVersion; };
           modules = [
             inputs.noctalia.nixosModules.default
             ./hosts/${hostname}/configuration.nix
@@ -54,7 +54,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs = { inherit inputs hostname; };
+              home-manager.extraSpecialArgs = { inherit inputs hostname stateVersion; };
               home-manager.users.liv = {
                 imports = [
                   ./home/home.nix
@@ -66,8 +66,8 @@
     in
     {
       nixosConfigurations = {
-        shitbox = mkSystem "shitbox" "x86_64-linux";
-        beeg-puter = mkSystem "beeg-puter" "x86_64-linux";
+        shitbox = mkSystem "shitbox" "x86_64-linux" "25.11";
+        beeg-puter = mkSystem "beeg-puter" "x86_64-linux" "25.11";
       };
     };
 }

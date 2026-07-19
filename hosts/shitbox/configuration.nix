@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  stateVersion,
   ...
 }:
 {
@@ -108,5 +109,5 @@
   # use them
   # services.xserver.videoDrivers = [ "nvidia" ];
 
-  system.stateVersion = "25.11";
+  system.stateVersion = stateVersion;
 }

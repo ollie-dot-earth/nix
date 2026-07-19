@@ -1,6 +1,7 @@
 {
   pkgs,
   hostname,
+  stateVersion,
   ...
 }:
 {
@@ -20,7 +21,7 @@
 
   home.username = "liv";
   home.homeDirectory = "/home/liv";
-  home.stateVersion = "25.11"; # Ensure this matches your NixOS version
+  home.stateVersion = stateVersion; # Ensure this matches your NixOS version
 
   home.packages = with pkgs; [
     coreutils
