@@ -2,8 +2,10 @@
 # Proper functions and such go in here (.zshrc.append) for lsp support ----------
 # -------------------------------------------------------------------------------
 
-# source backed up .zshenv which contains some secrets
-source ~/.zshenv.backup
+if [[ -f ~/.zshenv.backup ]]; then
+    # source backed up .zshenv which contains some secrets
+    source ~/.zshenv.backup
+fi
 
 # Completion styling ------------------------------------------------------------
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
