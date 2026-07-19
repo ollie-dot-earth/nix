@@ -21,10 +21,10 @@
       to-dotfiles = "cd ~/.dotfiles || cd ~/dotfiles";
       # rebuild
       rb = "to-dotfiles && jj file track . && doas nixos-rebuild switch --flake ~/.dotfiles#$(hostname)";
-      # rebuild vm 
+      # rebuild vm
       rbvm = "doas nixos-rebuild switch";
       # rebuild vm force
-      rbvmf = "doas nixos-rebuild switch --option tarball-ttl 0"
+      rbvmf = "doas nixos-rebuild switch --option tarball-ttl 0";
 
       # totally didnt steal these from mar 👀
       ls = "eza --icons auto";
