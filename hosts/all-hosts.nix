@@ -108,7 +108,6 @@
       "wheel"
     ];
     packages = with pkgs; [
-      thunderbird
       obsidian
     ];
   };
