@@ -35,12 +35,19 @@ dev() {
         return 0
     fi
 
-    if ! [ -e flake.nix ]; then
-        echo "❌ No flake.nix file in this directory"
-        return 1
+    if [ -e flake.nix ]; then
+        nix develop --set-env-var SHELL "$SHELL" -c "$SHELL"
+        # echo "❌ No flake.nix file in this directory"
+        return 0
     fi
 
-    nix develop --set-env-var SHELL "$SHELL" -c "$SHELL"
+    if [ -e shell.nix -o -e default.nix ]; then
+        nix-shell --command $SHELL
+        return 0
+    fi
+
+    echo "❌ No flake.nix, shell.nix or default.nix file in this directory"
+    return 1
 }
 
 
@@ -60,22 +67,36 @@ function create-envrc() {
         return 1
     fi
 
-    if ! [ -e flake.nix ]; then
-        echo "❌ No flake.nix file in this directory"
-        return 1
+    if [ -e flake.nix ]; then
+        _direnv_gitignore()
+
+        echo "if nix flake show &> /dev/null; then
+          use flake
+        fi" >./.envrc
+
+        direnv allow
+        return 0
     fi
 
+    if [ -e shell.nix -o -e default.nix ]; then
+        _direnv_gitignore()
+
+        echo "if [ -e shell.nix -o -e default.nix ]; then
+          use nix
+        fi" >./.envrc
+
+        direnv allow
+        return 0
+    fi
+
+}
+
+_direnv_gitignore() {
     if ! [ -e .gitignore ] || ! grep -q "^\.direnv/" .gitignore 
     then 
         echo "💨 Adding direnv cache to gitignore"
         echo -e "\n# Ignore direnv cache\n.direnv/" >> .gitignore
     fi
-
-    echo "if nix flake show &> /dev/null; then
-      use flake
-    fi" >./.envrc
-
-    direnv allow
 }
 
 _zap() {

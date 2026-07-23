@@ -8,9 +8,16 @@
 
   # TODO: add starship
 
-  programs.direnv = {
-    silent = true;
-    enable = true;
+  programs = {
+    direnv = {
+      silent = true;
+      enable = true;
+      nix-direnv.enable = true;
+    };
+    direnv-instant = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 
   programs.hyfetch = {

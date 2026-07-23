@@ -2,10 +2,12 @@
   pkgs,
   hostname,
   stateVersion,
+  inputs,
   ...
 }:
 {
   imports = [
+    inputs.direnv-instant.homeModules.direnv-instant
     ./modules/development.nix
     ./modules/fonts.nix
     ./modules/games.nix
