@@ -72,7 +72,7 @@ function create-envrc() {
 
         echo "if nix flake show &> /dev/null; then
           use flake
-        fi" >./.envrc
+        fi" > ./.envrc
 
         direnv allow
         return 0
@@ -83,7 +83,7 @@ function create-envrc() {
 
         echo "if [ -e shell.nix -o -e default.nix ]; then
           use nix
-        fi" >./.envrc
+        fi" > ./.envrc
 
         direnv allow
         return 0
@@ -92,8 +92,7 @@ function create-envrc() {
 }
 
 _direnv_gitignore() {
-    if ! [ -e .gitignore ] || ! grep -q "^\.direnv/" .gitignore 
-    then 
+    if [ -e .gitignore ]; then 
         echo "💨 Adding direnv cache to gitignore"
         echo -e "\n# Ignore direnv cache\n.direnv/" >> .gitignore
     fi
