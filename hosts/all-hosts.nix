@@ -84,6 +84,7 @@
   environment.gnome.excludePackages = [
     pkgs.gnome-tour
     pkgs.gnome-console
+    pkgs.nautilus
   ];
 
   # services.desktopManager.plasma6.enable = true;

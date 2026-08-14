@@ -1,8 +1,7 @@
 { pkgs, ... }:
-
 {
   home.packages = with pkgs; [
-    prismlauncher
+    pandora-launcher
     r2modman
   ];
 }
