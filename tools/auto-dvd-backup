@@ -1,0 +1,23 @@
+#!/usr/bin/env nix-shell
+#! nix-shell -i bash --pure
+#! nix-shell -p bash dvdbackup util-linux
+
+printf '%s' "Checking for dvd"
+
+while [[ true ]]; do
+    printf '%s' "."
+    blkid /dev/sr0 
+
+    if [[ $? = 0 ]]; then
+        dvdbackup --mirror --input /dev/sr0 --output ~/ServerSync/Media/Videos/raw_dvd/automated/
+
+        sleep 10
+
+        eject /dev/sr0
+
+        echo "Checking for dvd"
+    fi
+
+    sleep 10
+done
+

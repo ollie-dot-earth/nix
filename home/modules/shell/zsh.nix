@@ -37,6 +37,7 @@
 
       cd = "zox";
       cdi = "zoxi";
+      dvdripper = "~/.dotfiles/tools/auto-dvd-backup";
     };
     history = {
       size = 5000;
