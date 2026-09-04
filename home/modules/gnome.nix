@@ -72,5 +72,6 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.all-in-one-clipboard
     gnomeExtensions.search-light
+    nautilus
   ];
 }
