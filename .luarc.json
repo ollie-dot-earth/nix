@@ -1,4 +1,5 @@
 {
   "diagnostics.globals": ["LazyVim", "vim"],
-  "diagnostics.disable": ["undefined-global", "undefined-doc-name"]
+  "diagnostics.disable": ["undefined-global", "undefined-doc-name",
+        "redefined-local"]
 }

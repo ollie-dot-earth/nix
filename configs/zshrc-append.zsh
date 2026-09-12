@@ -147,6 +147,10 @@ _zap_on_cd() {
     [[ -t 1 ]] && _zap
 }
 
+dev-layout() {
+    printf "\033]1337;SetUserVar=%s=%s\007" dev-layout `echo -n client-server | base64`
+}
+
 autoload -Uz add-zsh-hook
 add-zsh-hook chpwd _zap_on_cd
 
