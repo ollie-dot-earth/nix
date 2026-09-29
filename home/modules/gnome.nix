@@ -4,7 +4,6 @@
   hostname,
   ...
 }:
-
 {
   dconf.settings = {
     "org/gnome/desktop/applications/browser" = {
@@ -19,6 +18,7 @@
         pkgs.gnomeExtensions."blur-my-shell".extensionUuid
         pkgs.gnomeExtensions."search-light".extensionUuid
         pkgs.gnomeExtensions."all-in-one-clipboard".extensionUuid
+        pkgs.gnomeExtensions."gsconnect".extensionUuid
       ];
     };
     "org/gnome/shell" = {
@@ -72,6 +72,7 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.all-in-one-clipboard
     gnomeExtensions.search-light
+    gnomeExtensions.gsconnect
     nautilus
   ];
 }

@@ -85,6 +85,22 @@
     pkgs.gnome-console
   ];
 
+  # port ranges for kdeconnect
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+  };
+
   # services.desktopManager.plasma6.enable = true;
   programs.ssh.askPassword = lib.mkForce "${pkgs.gnome-themes-extra}/libexec/seahorse/ssh-askpass";
   services.gnome.gnome-keyring.enable = true;
