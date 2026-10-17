@@ -4,10 +4,6 @@
 }:
 
 {
-  # maybe ill set up wakatime as well :think:
-  # home.packages = with pkgs; [
-  #   wakatime-cli
-  # ];
   programs.neovim = {
     enable = true;
     defaultEditor = true;
